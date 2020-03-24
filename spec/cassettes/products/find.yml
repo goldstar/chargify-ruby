@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/products/5216049.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 24 Mar 2020 22:05:14 GMT
+      etag:
+      - W/"3d71335a57303cef9eae0e07b6954092"
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - 7d9dee6c-1f12-49ca-97fb-b89c89996a1c
+      x-runtime:
+      - '0.067269'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '1159'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"product":{"id":5216049,"name":"Gold Plan","handle":"gold","description":"This
+        is our gold plan.","accounting_code":"123","request_credit_card":true,"expiration_interval":null,"expiration_interval_unit":null,"created_at":"2020-03-24T14:43:53-07:00","updated_at":"2020-03-24T14:43:53-07:00","price_in_cents":1000,"interval":1,"interval_unit":"month","initial_charge_in_cents":null,"trial_price_in_cents":null,"trial_interval":null,"trial_interval_unit":null,"archived_at":null,"require_credit_card":true,"return_params":null,"taxable":false,"update_return_url":null,"tax_code":"D0000000","initial_charge_after_trial":false,"version_number":1,"update_return_params":null,"default_product_price_point_id":906882,"product_price_point_id":906882,"product_price_point_name":"Original","product_price_point_handle":"uuid:7b08d7e0-5046-0138-acf5-0a7da89f880c","product_family":{"id":1518096,"name":"Acme
+        Projects","description":"Amazing project management tool","handle":"acme-projects","accounting_code":null},"public_signup_pages":[{"id":411295,"return_url":null,"return_params":null,"url":"https://<CHARGIFY_SUBDOMAIN>.chargifypay.com/subscribe/g2th3mnzswxb/gold"}]}}'
+    http_version: 
+  recorded_at: Tue, 24 Mar 2020 22:05:14 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/product_families.json
+    body:
+      encoding: UTF-8
+      string: '{"product_family":{"name":"Acme Projects","description":"Amazing project
+        management tool"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 24 Mar 2020 21:23:18 GMT
+      etag:
+      - W/"c8734e4d7d4adfb6cb0e9364425be685"
+      location:
+      - https://<CHARGIFY_SUBDOMAIN>.chargify.com/product_families/1518096
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      set-cookie:
+      - _chargify_session=K0MwMlVkRlJUVGR3WEJaNnExZFduMHZzM3lxT0tKVmhEdk1teE1SYXlXMzBVVDh2RC8wSXk2UWhXeVd5eVd1SXMyeTVISjFuYjRDVmRWa2RvWjJOOXUzVVBZYS9NRlBQemY2WFduN25lU29YSHcvV0VSOU0wbkVkOGhmcXVERVlXenNFNXFTTkZYcklYbmprMTFHY1czZHkvT1J5bTU0b1pnWUVzc29kOVpuUGNRbTQ2L3RlZDNxeUFuaGp6eTl6LS1obERHMnVIeXNaYVdsKzJ3a3ZrY3lRPT0%3D--8943c73bd038092392dab56b4de7ce6311f893eb;
+        domain=.chargify.com; path=/; secure; HttpOnly
+      status:
+      - 201 Created
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - '0987b1e8-6d8d-421a-84b4-c5d813ba5813'
+      x-runtime:
+      - '0.040553'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '152'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"product_family":{"id":1518096,"name":"Acme Projects","description":"Amazing
+        project management tool","handle":"acme-projects","accounting_code":null}}'
+    http_version: 
+  recorded_at: Tue, 24 Mar 2020 21:23:18 GMT
+recorded_with: VCR 4.0.0
