@@ -35,4 +35,37 @@ describe Chargify::Api::Customers do
         to be_a Chargify::Models::Customer
     end
   end
+
+  describe ".find", vcr: { cassette_name: "customers/find" } do
+    let(:id) { 33100727 }
+
+    it "creates a GET request for 'customers/:id'" do
+      expect(customers.client).to receive(:get).
+        with("customers/#{id}.json").and_call_original
+
+      customers.find(id)
+    end
+
+    it "returns a Chargify::Models::Customer" do
+      expect(customers.find(id)).
+        to be_a Chargify::Models::Customer
+    end
+  end
+
+  describe ".lookup", vcr: { cassette_name: "customers/lookup" } do
+    let(:reference) { "chargify-ruby-customer" }
+
+    it "creates a GET request for 'customers/lookup'" do
+      expect(customers.client).to receive(:get).
+        with("customers/lookup.json", reference: reference).
+        and_call_original
+
+      customers.lookup(reference)
+    end
+
+    it "returns a Chargify::Models::Customer" do
+      expect(customers.lookup(reference)).
+        to be_a Chargify::Models::Customer
+    end
+  end
 end
