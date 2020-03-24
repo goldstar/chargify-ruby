@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/customers.json
+    body:
+      encoding: UTF-8
+      string: '{"customer":{"first_name":"Martha","last_name":"Washington","email":"martha@example.com","cc_emails":"george@example.com","organization":"ABC,
+        Inc.","reference":"chargify-ruby-customer","address":"123 Main Street","address2":"Unit
+        10","city":"Anytown","state":"MA","zip":"02120","country":"US","phone":"555-555-1212"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Mon, 23 Mar 2020 20:18:32 GMT
+      etag:
+      - W/"c6cc5554de8c7a3651f82856a3f6abe7"
+      location:
+      - https://<CHARGIFY_SUBDOMAIN>.chargify.com/customers/33100727
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 201 Created
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - dfbd9294-c7e6-4256-a754-71ecefe7a5c7
+      x-runtime:
+      - '0.061283'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '587'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"customer":{"first_name":"Martha","last_name":"Washington","email":"martha@example.com","cc_emails":"george@example.com","organization":"ABC,
+        Inc.","reference":"chargify-ruby-customer","id":33100727,"created_at":"2020-03-23T13:18:32-07:00","updated_at":"2020-03-23T13:18:32-07:00","address":"123
+        Main Street","address_2":null,"city":"Anytown","state":"MA","zip":"02120","country":"US","phone":"555-555-1212","verified":false,"portal_customer_created_at":null,"portal_invite_last_sent_at":null,"portal_invite_last_accepted_at":null,"tax_exempt":false,"vat_number":null,"parent_id":null}}'
+    http_version: 
+  recorded_at: Mon, 23 Mar 2020 20:18:32 GMT
+recorded_with: VCR 4.0.0
