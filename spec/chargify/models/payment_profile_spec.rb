@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Chargify::Models::CreditCard do
+describe Chargify::Models::PaymentProfile do
   let(:params) {{
     "id" => 22922729,
     "first_name" => "Alysa",
@@ -23,7 +23,7 @@ describe Chargify::Models::CreditCard do
     "disabled" => false
   }}
 
-  subject(:credit_card) { described_class.new(params) }
+  subject(:payment_profile) { described_class.new(params) }
 
   its(:id) { is_expected.to eq params["id"] }
   its(:first_name) { is_expected.to eq params["first_name"] }

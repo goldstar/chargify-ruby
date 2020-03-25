@@ -99,5 +99,5 @@ describe Chargify::Models::Subscription do
   its(:currency) { is_expected.to eq params["currency"] }
   its(:customer) { is_expected.to be_a Chargify::Models::Customer }
   its(:product) { is_expected.to be_a Chargify::Models::Product }
-  its(:credit_card) { is_expected.to be_a Chargify::Models::CreditCard }
+  its(:credit_card) { is_expected.to be_a Chargify::Models::PaymentProfile }
 end

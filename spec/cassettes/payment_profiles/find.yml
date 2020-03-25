@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/payment_profiles/22922729.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 25 Mar 2020 22:35:33 GMT
+      etag:
+      - W/"a3b5d0661bb87d0875360633fd8f6dd4"
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - ca224021-fe1e-4291-8e0d-0666f6d770c6
+      x-runtime:
+      - '0.020258'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '487'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"payment_profile":{"id":22922729,"first_name":"Alysa","last_name":"Test","masked_card_number":"XXXX-XXXX-XXXX-1111","card_type":"visa","expiration_month":10,"expiration_year":2030,"customer_id":33145282,"current_vault":"braintree_blue","vault_token":"803871154","billing_address":"123
+        Mass Ave.","billing_city":"Boston","billing_state":"MA","billing_zip":"02120","billing_country":"US","customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}}'
+    http_version: 
+  recorded_at: Wed, 25 Mar 2020 22:35:31 GMT
+recorded_with: VCR 4.0.0

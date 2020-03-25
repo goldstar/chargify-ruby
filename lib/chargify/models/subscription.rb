@@ -49,7 +49,7 @@ module Chargify
       # Associations
       attribute :customer, Models::Customer
       attribute :product, Models::Product
-      attribute :credit_card, Models::CreditCard
+      attribute :credit_card, Models::PaymentProfile
     end
   end
 end
