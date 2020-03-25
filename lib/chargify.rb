@@ -3,6 +3,7 @@ require "dry-container"
 
 module Chargify
   require_relative "chargify/client"
+  require_relative "chargify/collection"
   require_relative "chargify/configuration"
   require_relative "chargify/model"
   require_relative "chargify/models"

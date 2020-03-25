@@ -11,7 +11,6 @@ describe Chargify::Api::Customers do
         email: "martha@example.com",
         cc_emails: "george@example.com",
         organization: "ABC, Inc.",
-        reference: "1234567890",
         address: "123 Main Street",
         address2: "Unit 10",
         city: "Anytown",
@@ -49,6 +48,24 @@ describe Chargify::Api::Customers do
     it "returns a Chargify::Models::Customer" do
       expect(customers.find(id)).
         to be_a Chargify::Models::Customer
+    end
+  end
+
+  describe ".list", vcr: { cassette_name: "customers/list" } do
+    let(:params) {{ page: 1 }}
+
+    it "creates a GET request for 'customers'" do
+      expect(customers.client).to receive(:get).
+        with("customers.json", params).and_call_original
+
+      customers.list(params)
+    end
+
+    it "returns a Chargify::Collection of Models::Customer", :aggregate_failures do
+      result = customers.list(params)
+
+      expect(result).to be_a Chargify::Collection
+      expect(result).to all be_a Chargify::Models::Customer
     end
   end
 

@@ -11,6 +11,11 @@ module Chargify
         Models::Customer.new(response.body["customer"])
       end
 
+      def list(options={})
+        response = client.get("customers.json", options)
+        Collection.new(Models::Customer, response.body)
+      end
+
       def lookup(reference)
         response = client.get("customers/lookup.json", reference: reference)
         Models::Customer.new(response.body["customer"])
