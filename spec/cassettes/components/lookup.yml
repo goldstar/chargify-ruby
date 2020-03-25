@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/components/lookup.json?handle=chargify-ruby-component
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 25 Mar 2020 04:12:34 GMT
+      etag:
+      - W/"0c292e1701a08df6de500571e7b460b4"
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - 33d6af72-19a2-4a30-b3d1-ca1b626b82bc
+      x-runtime:
+      - '0.054023'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '894'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"component":{"id":957813,"name":"Test Component","handle":"chargify-ruby-component","pricing_scheme":"per_unit","unit_name":"item","unit_price":"10.0","product_family_id":1518096,"product_family_name":"Acme
+        Projects","price_per_unit_in_cents":null,"kind":"quantity_based_component","archived":false,"taxable":false,"description":null,"default_price_point_id":821564,"prices":[{"id":1681149,"component_id":957813,"starting_quantity":1,"ending_quantity":null,"unit_price":"10.0","price_point_id":821564,"formatted_unit_price":"$10.00","segment_id":null}],"price_point_count":1,"price_points_url":"https://<CHARGIFY_SUBDOMAIN>.chargify.com/components/957813/price_points","default_price_point_name":"Original","tax_code":"","recurring":true,"upgrade_charge":null,"downgrade_credit":null,"created_at":"2020-03-24T21:08:42-07:00","hide_date_range_on_invoice":false,"allow_fractional_quantities":false}}'
+    http_version: 
+  recorded_at: Wed, 25 Mar 2020 04:12:34 GMT
+recorded_with: VCR 4.0.0

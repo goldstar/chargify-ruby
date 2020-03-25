@@ -1,5 +1,6 @@
 module Chargify
   module Models
+    require_relative "models/component"
     require_relative "models/credit_card"
     require_relative "models/customer"
     require_relative "models/product"
