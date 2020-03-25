@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/subscriptions/32118769.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 25 Mar 2020 03:31:12 GMT
+      etag:
+      - W/"ffa8187917a4c0b8bae78c75b97b273b"
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - e0c9e527-aa0e-4af4-bb23-052781d859af
+      x-runtime:
+      - '0.081968'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '3414'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subscription":{"id":32118769,"state":"active","trial_started_at":null,"trial_ended_at":null,"activated_at":"2020-03-24T20:17:24-07:00","created_at":"2020-03-24T20:17:20-07:00","updated_at":"2020-03-24T20:17:24-07:00","expires_at":null,"balance_in_cents":0,"current_period_ends_at":"2020-04-24T20:17:20-07:00","next_assessment_at":"2020-04-24T20:17:20-07:00","canceled_at":null,"cancellation_message":null,"next_product_id":null,"next_product_handle":null,"cancel_at_end_of_period":false,"payment_collection_method":"automatic","snap_day":null,"cancellation_method":null,"current_period_started_at":"2020-03-24T20:17:20-07:00","previous_state":"active","signup_payment_id":373242560,"signup_revenue":"10.00","delayed_cancel_at":null,"coupon_code":null,"total_revenue_in_cents":1000,"product_price_in_cents":1000,"product_version_number":1,"payment_type":"credit_card","referral_code":null,"coupon_use_count":null,"coupon_uses_allowed":null,"reason_code":null,"automatically_resume_at":null,"coupon_codes":[],"offer_id":null,"payer_id":null,"current_billing_amount_in_cents":1000,"receives_invoice_emails":null,"product_price_point_id":906882,"next_product_price_point_id":null,"net_terms":null,"stored_credential_transaction_id":null,"reference":null,"currency":"USD","customer":{"id":33145282,"first_name":"Alysa","last_name":"Test","organization":null,"email":"alysa@example.com","created_at":"2020-03-24T20:17:20-07:00","updated_at":"2020-03-24T20:17:20-07:00","reference":null,"address":null,"address_2":null,"city":null,"state":null,"zip":null,"country":null,"phone":null,"portal_invite_last_sent_at":null,"portal_invite_last_accepted_at":null,"verified":false,"portal_customer_created_at":null,"vat_number":null,"cc_emails":null,"tax_exempt":false,"parent_id":null},"product":{"id":5216049,"name":"Gold
+        Plan","handle":"gold","description":"This is our gold plan.","accounting_code":"123","request_credit_card":true,"expiration_interval":null,"expiration_interval_unit":null,"created_at":"2020-03-24T14:43:53-07:00","updated_at":"2020-03-24T14:43:53-07:00","price_in_cents":1000,"interval":1,"interval_unit":"month","initial_charge_in_cents":null,"trial_price_in_cents":null,"trial_interval":null,"trial_interval_unit":null,"archived_at":null,"require_credit_card":true,"return_params":null,"taxable":false,"update_return_url":null,"tax_code":"D0000000","initial_charge_after_trial":false,"version_number":1,"update_return_params":null,"default_product_price_point_id":906882,"product_price_point_id":906882,"product_price_point_name":"Original","product_price_point_handle":"uuid:7b08d7e0-5046-0138-acf5-0a7da89f880c","product_family":{"id":1518096,"name":"Acme
+        Projects","description":"Amazing project management tool","handle":"acme-projects","accounting_code":null},"public_signup_pages":[{"id":411295,"return_url":null,"return_params":null,"url":"https://<CHARGIFY_SUBDOMAIN>.chargifypay.com/subscribe/g2th3mnzswxb/gold"}]},"credit_card":{"id":22922729,"first_name":"Alysa","last_name":"Test","masked_card_number":"XXXX-XXXX-XXXX-1111","card_type":"visa","expiration_month":10,"expiration_year":2030,"customer_id":33145282,"current_vault":"braintree_blue","vault_token":"803871154","billing_address":"123
+        Mass Ave.","billing_city":"Boston","billing_state":"MA","billing_zip":"02120","billing_country":"US","customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}}}'
+    http_version: 
+  recorded_at: Wed, 25 Mar 2020 03:31:12 GMT
+recorded_with: VCR 4.0.0
