@@ -56,6 +56,24 @@ describe Chargify::Api::Subscriptions do
     end
   end
 
+  describe ".list", vcr: { cassette_name: "subscriptions/list" } do
+    let(:params) {{ product: 5216049 }}
+
+    it "creates a GET request for 'subscriptions'" do
+      expect(subscriptions.client).to receive(:get).
+        with("subscriptions.json", params).and_call_original
+
+      subscriptions.list(params)
+    end
+
+    it "returns a Chargify::Collection of Models::Subscription", :aggregate_failures do
+      result = subscriptions.list(params)
+
+      expect(result).to be_a Chargify::Collection
+      expect(result).to all be_a Chargify::Models::Subscription
+    end
+  end
+
   describe ".lookup", vcr: { cassette_name: "subscriptions/lookup" } do
     let(:reference) { "chargify-ruby-subscription" }
 

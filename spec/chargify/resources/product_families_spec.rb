@@ -39,4 +39,20 @@ describe Chargify::Api::ProductFamilies do
         to be_a Chargify::Models::ProductFamily
     end
   end
+
+  describe ".list", vcr: { cassette_name: "product_families/list" } do
+    it "creates a GET request for 'product_families'" do
+      expect(product_families.client).to receive(:get).
+        with("product_families.json").and_call_original
+
+      product_families.list
+    end
+
+    it "returns a Chargify::Collection of Models::ProductFamily", :aggregate_failures do
+      result = product_families.list
+
+      expect(result).to be_a Chargify::Collection
+      expect(result).to all be_a Chargify::Models::ProductFamily
+    end
+  end
 end

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/product_families.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Thu, 26 Mar 2020 17:10:27 GMT
+      etag:
+      - W/"bf38bbda450389b2f3f92273f27a172b"
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - 680c95c6-3277-48fa-9421-773f3da644cf
+      x-runtime:
+      - '0.033492'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '282'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"product_family":{"id":1518096,"name":"Acme Projects","description":"Amazing project management tool","handle":"acme-projects","accounting_code":null}}]'
+    http_version: 
+  recorded_at: Thu, 26 Mar 2020 17:10:27 GMT
+recorded_with: VCR 4.0.0

@@ -20,7 +20,7 @@ describe Chargify::Api::Products do
       }
     }}
 
-    it "creates a POST request for 'product_families/:family_id/products'" do
+    it "creates a POST request for 'products/:family_id/products'" do
       expect(products.client).to receive(:post).
         with("product_families/#{product_family_id}/products.json", params).
         and_call_original
@@ -47,6 +47,25 @@ describe Chargify::Api::Products do
     it "returns a Chargify::Models::Product" do
       expect(products.find(id)).
         to be_a Chargify::Models::Product
+    end
+  end
+
+  describe ".list", vcr: { cassette_name: "products/list" } do
+    let(:product_family_id) { 1518096 }
+
+    it "creates a GET request for 'products'" do
+      expect(products.client).to receive(:get).
+        with("product_families/#{product_family_id}/products.json").
+        and_call_original
+
+      products.list(product_family_id)
+    end
+
+    it "returns a Chargify::Collection of Models::Product", :aggregate_failures do
+      result = products.list(product_family_id)
+
+      expect(result).to be_a Chargify::Collection
+      expect(result).to all be_a Chargify::Models::Product
     end
   end
 

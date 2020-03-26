@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<CHARGIFY_SUBDOMAIN>.chargify.com/payment_profiles.json?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Authorization:
+      - Basic <CHARGIFY_API_KEY>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - max-age=0, private, must-revalidate, no-cache, no-store
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Thu, 26 Mar 2020 17:05:52 GMT
+      etag:
+      - W/"4d0cd3d6bf0e0ca97b15eee9c943707e"
+      p3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      server:
+      - nginx + Phusion Passenger
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-powered-by:
+      - Phusion Passenger Enterprise
+      x-request-id:
+      - e6ab8674-11c9-43a4-bcca-2ea109dd3b1c
+      x-runtime:
+      - '0.122703'
+      x-xss-protection:
+      - 1; mode=block
+      content-length:
+      - '9035'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"payment_profile":{"id":21955256,"first_name":"bat","last_name":"man","masked_card_number":null,"card_type":null,"expiration_month":null,"expiration_year":null,"customer_id":31887609,"current_vault":"braintree_blue","vault_token":"638275976","billing_address":null,"billing_city":null,"billing_state":null,"billing_zip":null,"billing_country":null,"customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}},{"payment_profile":{"id":22311407,"first_name":"Samwise","last_name":"Gamgee","masked_card_number":null,"card_type":null,"expiration_month":null,"expiration_year":null,"customer_id":32339705,"current_vault":"braintree_blue","vault_token":"293335689","billing_address":null,"billing_city":null,"billing_state":null,"billing_zip":null,"billing_country":null,"customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}},{"payment_profile":{"id":22326989,"first_name":"Robert","last_name":"Barker","masked_card_number":null,"card_type":null,"expiration_month":null,"expiration_year":null,"customer_id":32358276,"current_vault":"braintree_blue","vault_token":"638851706","billing_address":null,"billing_city":null,"billing_state":null,"billing_zip":null,"billing_country":null,"customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}},{"payment_profile":{"id":22579953,"first_name":"C","last_name":"W","masked_card_number":null,"card_type":null,"expiration_month":null,"expiration_year":null,"customer_id":32671662,"current_vault":"braintree_blue","vault_token":"403236633","billing_address":null,"billing_city":null,"billing_state":null,"billing_zip":null,"billing_country":null,"customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}},{"payment_profile":{"id":22580119,"first_name":"Test","last_name":"Name","masked_card_number":null,"card_type":null,"expiration_month":null,"expiration_year":null,"customer_id":32671843,"current_vault":"braintree_blue","vault_token":"151253784","billing_address":null,"billing_city":null,"billing_state":null,"billing_zip":null,"billing_country":null,"customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}},{"payment_profile":{"id":22620254,"first_name":"Mr.","last_name":"Credit Man","masked_card_number":null,"card_type":null,"expiration_month":null,"expiration_year":null,"customer_id":32720211,"current_vault":"braintree_blue","vault_token":"810411561","billing_address":null,"billing_city":null,"billing_state":null,"billing_zip":null,"billing_country":null,"customer_vault_token":null,"billing_address_2":null,"payment_type":"credit_card","disabled":false}}]'
+    http_version: 
+  recorded_at: Thu, 26 Mar 2020 17:05:53 GMT
+recorded_with: VCR 4.0.0
