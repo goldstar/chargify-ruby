@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.4"
 
-  spec.add_runtime_dependency "activesupport", "< 5.2"
+  spec.add_runtime_dependency "activesupport", "< 6.1"
   spec.add_runtime_dependency "artisanal-model"
   spec.add_runtime_dependency "dry-container"
   spec.add_runtime_dependency "dry-configurable", "~> 0.11"
